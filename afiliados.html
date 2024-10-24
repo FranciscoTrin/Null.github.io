@@ -114,7 +114,6 @@
     <div class="form-container">
         <form>
             <form action="https://api.staticforms.xyz/submit" method="post">
-                <input type="hidden" name="accessKey" value="48545e07-1cf4-4089-b2c6-8e69cd6eed6e">
 
             <label for="name">Nome Completo</label>
             <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -127,9 +126,10 @@
             
             <label for="projectDetails">Descrição do Projeto</label>
             <textarea id="projectDetails" name="projectDetails" placeholder="Descreva o seu projeto e como gostaria de colaborar" required></textarea>
+            <button type="submit">Enviar</button>
             
             <input type="hidden" name="redirectTo" value="https://franciscotrin.github.io/Null.github.io/formulario.html">
-            <button type="submit">Enviar</button>
+            <input type="hidden" name="accessKey" value="48545e07-1cf4-4089-b2c6-8e69cd6eed6e">
         </form>
     </div>
 </div>
