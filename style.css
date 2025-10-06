@@ -41,14 +41,16 @@ header {
     position: relative; 
 }
 
-header img {
+/* 1. Visar APENAS a imagem da logo (que está dentro de <a>) */
+header a img {
     height: 120px;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
     /* Efeito de sombra base, mais subtil, usando a cor laranja */
     filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.05)); 
 }
 
-header img:hover {
+/* 2. Aplicar o efeito Laranja APENAS na logo ao passar o rato */
+header a img:hover {
     transform: scale(1.05);
     /* Efeito de cor laranja (drop-shadow) ao passar o rato (hover) */
     filter: drop-shadow(0 0 15px var(--primary-accent-color));
@@ -204,13 +206,17 @@ p {
     margin-top: 25px;
 }
 
+/* CORREÇÃO: As imagens e vídeos agora têm apenas 100% da largura da sua célula no grid (minmax(280px, 1fr)) */
 .project-images img, .project-images video {
     width: 100%;
+    /* Altura automática para manter a proporção da imagem/GIF/vídeo original */
+    height: auto; 
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* CORREÇÃO: Garantir que o GIF (se for vídeo) ou IMG tem o efeito, mas se o filtro for o problema com o GIF, pode ser necessário remover o filter daqui. Mantenho-o para testar, mas se persistir, remova o `filter` no seu código. */
 .project-images img:hover, .project-images video:hover {
     transform: scale(1.03);
     filter: brightness(1.1);
