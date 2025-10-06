@@ -37,16 +37,38 @@ header {
     padding: 25px 0;
     text-align: center;
     animation: fadeIn 1s ease-out;
+    /* OBRIGATÓRIO: Permite posicionar o mascote em absoluto dentro do header */
+    position: relative; 
 }
 
 header img {
     height: 120px;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
+    /* Efeito de sombra base, mais subtil, usando a cor laranja */
+    filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.05)); 
 }
 
 header img:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 8px rgba(255, 165, 0, 0.2));
+    /* Efeito de cor laranja (drop-shadow) ao passar o rato (hover) */
+    filter: drop-shadow(0 0 15px var(--primary-accent-color));
+}
+
+/* Estilo para posicionar o Mascote Nully no canto superior direito */
+.mascote-nully {
+    position: absolute;
+    top: 5px; /* Distância a partir do topo */
+    right: 25px; /* Distância a partir da direita */
+    height: 100px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    z-index: 900; /* Para garantir que fica por cima dos outros elementos */
+    transition: transform 0.3s ease-out, filter 0.3s ease;
+}
+
+.mascote-nully:hover {
+    /* Efeito ao passar o rato (hover) no mascote */
+    transform: scale(1.05) rotate(3deg); /* Pequeno aumento de tamanho e rotação */
+    filter: drop-shadow(0 0 10px var(--primary-accent-color)); /* Brilho laranja */
 }
 
 nav {
