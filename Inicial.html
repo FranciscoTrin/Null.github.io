@@ -1,104 +1,83 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Null</title>
-    <link rel="icon" href="icon.png" type="image/png">
-    <style>
-                body {
-            margin: 0;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: white;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 24px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .section {
-            padding: 20px;
-            background-color: #f0f0f0;
-            display: flex;
-            margin: 20px 0;
-        }
-        .section:nth-child(even) {
-            background-color: #e0e0e0;
-        }
-        .section img {
-            max-width: 40%;
-            margin-right: 20px;
-        }
-        .section-text {
-            flex: 1;
-            font-size: 24px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="Inicial.html">
+        <img
+          src="icon.png"
+          alt="Logo da Null"
+          title="Voltar à página inicial"
+        />
+      </a>
+    </header>
 
-<header>
-    <img src="icon.png" alt="Logo da Null" style="height: 150px;">
-</header>
+    <nav>
+      <a href="Inicial.html">Inicial</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="afiliados.html">Programa de Afiliados</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
 
-<nav>
-    <a href="Inicial.html">Inicial</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="afiliados.html">Inscrição no Programa de Afiliados</a>
-    <a href="faq.html">FAQ</a>
-</nav>
-
-<!-- Textos principais da página inicial -->
-<div class="section">
-    <img src="Experiencias.jpg" style="height: 280px;">
-    <div class="section-text">
+    <div class="section">
+      <img
+        src="Experiencias.jpg"
+        alt="Homem usando óculos de realidade virtual"
+      />
+      <div class="section-text">
         <h2>Experiências Inovadoras</h2>
-        <p>Na <span style="color: #ffa500;">Null</span> criamos videojogos que revolucionam o mercado português, entregando uma experiência única e imersiva para todos os jogadores.</p>
+        <p>
+          Na <span class="brand-color">Null</span>, criamos videojogos que
+          revolucionam o mercado português, entregando uma experiência única e
+          imersiva para todos os jogadores.
+        </p>
+      </div>
     </div>
-</div>
 
-<div class="section">
-    <img src="Parceiros.png" style="height: 320px;">
-    <div class="section-text">
+    <div class="section">
+      <img src="Parceiros.png" alt="Aperto de mãos simbolizando parceria" />
+      <div class="section-text">
         <h2>Parceiros Globais</h2>
-        <p>Nosso programa de afiliados permite que desenvolvedores indie se inscrevam para receber ajuda nos seus projetos pessoais, nós atuamos como editora e arcamos com todos os custos de lançamento e promoção do jogo e em alguns casos podemos ajudar de maior maneira monetaria.</p>
+        <p>
+          Nosso programa de afiliados permite que desenvolvedores indie se
+          inscrevam para receber ajuda em seus projetos. Atuamos como editora,
+          arcando com custos de lançamento e promoção, e em alguns casos,
+          oferecendo maior apoio monetário.
+        </p>
+      </div>
     </div>
-</div>
 
-<div class="section">
-    <img src="Faq.webp" style="height: 300px;">
-    <div class="section-text">
-        <h2>FAQ</h2>
-        <p>Tem dúvidas? Consulte nossa seção de FAQ para obter respostas rápidas e informações detalhadas sobre nossos jogos e o programa de afiliados.</p>
+    <div class="section">
+      <img src="Faq.webp" alt="Ponto de interrogação em destaque" />
+      <div class="section-text">
+        <h2>Dúvidas?</h2>
+        <p>
+          Consulte nossa seção de <a href="faq.html">FAQ</a> para obter
+          respostas rápidas e informações detalhadas sobre nossos jogos e o
+          programa de afiliados.
+        </p>
+      </div>
     </div>
-</div>
 
-<footer>
-    <p>&copy; 2024 <span style="color: #ffa500;">Null</span>. Todos os direitos reservados.    -    nullsup.pt@null.net   -   Rua 1234,3050-18, Pedrulha, Coimbra, Portugal </p>
-</footer>
-
-</body>
+    <footer>
+      <div class="social-links">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+      <p>
+        &copy; 2024 <span class="brand-color">Null</span>. Todos os direitos
+        reservados.
+      </p>
+      <p>
+        nullsup.pt@null.net - Rua 1234, 3050-18, Pedrulha, Coimbra, Portugal
+      </p>
+    </footer>
+  </body>
 </html>

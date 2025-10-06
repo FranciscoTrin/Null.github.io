@@ -1,145 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscrição no Programa de Afiliados - Null</title>
-    <link rel="icon" href="icon.png" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: white;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 24px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .content {
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .content h1 {
-            text-align: center;
-            color: #333;
-        }
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-        .form-container {
-            margin-top: 20px;
-        }
-        .form-container label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 16px;
-        }
-        .form-container input, .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .form-container textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        .form-container button {
-            margin-top: 20px;
-            padding: 12px 20px;
-            font-size: 16px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #555;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="Inicial.html">
+        <img
+          src="icon.png"
+          alt="Logo da Null"
+          title="Voltar à página inicial"
+        />
+      </a>
+    </header>
 
-<header>
-    <img src="icon.png" alt="Logo da Null" style="height: 150px;">
-</header>
+    <nav>
+      <a href="Inicial.html">Inicial</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="afiliados.html">Programa de Afiliados</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
 
-<nav>
-    <a href="Inicial.html">Inicial</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="afiliados.html">Inscrição no Programa de Afiliados</a>
-    <a href="faq.html">FAQ</a>
-</nav>
+    <div class="content">
+      <h1>Inscrição no Programa de Afiliados</h1>
+      <p>
+        Nosso Programa de Afiliados é voltado para desenvolvedores independentes
+        que desejam promover os seus produtos com a ajuda da
+        <span class="brand-color">Null</span>. Ao se inscrever, você terá a
+        chance de colaborar diretamente com nossa equipe, recebendo acesso a
+        materiais exclusivos e vantagens especiais. Para participar, envie-nos
+        uma descrição detalhada do seu projeto através do formulário abaixo:
+      </p>
 
-<div class="content">
-    <h1>Inscrição no Programa de Afiliados</h1>
-    <p>Nosso Programa de Afiliados é voltado para desenvolvedores independentes que desejam promover os seus produtos com ajuda da <span style="color: #ffa500;">Null</span> . Ao se inscrever, você terá a chance de colaborar diretamente com nossa equipe, recebendo acesso a materiais exclusivos e vantagens especiais. Para participar, envie-nos uma descrição detalhada do seu projeto através do formulário abaixo:</p>
-    
-    <div class="form-container">
+      <div class="form-container">
         <form action="https://api.staticforms.xyz/submit" method="post">
-                
-                <label for="name">Nome:</label>
-                <input type="text" name="name" required><br>
-            
-                <label for="email">Email:</label>
-                <input type="email" name="email" required><br>
-            
-                <label for="projectName">Nome do Projeto:</label>
-                <input type="text"  name="$projectName" required><br>
-            
-                <label for="description">Descrição do Projeto:</label>
-                <textarea  name="$description" rows="5" required></textarea><br>
+          <input
+            type="hidden"
+            name="accessKey"
+            value="abc77c4a-c282-451c-930f-03ff09d01bb1"
+          />
+          <input
+            type="hidden"
+            name="redirectTo"
+            value="https://franciscotrin.github.io/Null.github.io/formulario.html"
+          />
 
-            
-                <input type="hidden" name="accessKey" value="abc77c4a-c282-451c-930f-03ff09d01bb1">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required />
 
-                <input type="hidden" name="redirectTo" value="https://franciscotrin.github.io/Null.github.io/formulario.html">
-                 
-                
-                <button type="submit">Enviar</button>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="projectName">Nome do Projeto:</label>
+          <input type="text" id="projectName" name="$projectName" required />
+
+          <label for="description">Descrição do Projeto:</label>
+          <textarea
+            id="description"
+            name="$description"
+            rows="5"
+            required
+          ></textarea>
+
+          <button type="submit">Enviar Inscrição</button>
         </form>
+      </div>
     </div>
-</div>
 
-<footer>
-    <p>&copy; 2024 <span style="color: #ffa500;">Null</span>. Todos os direitos reservados.    -    nullsup.pt@null.net   -   Rua 1234,3050-18, Pedrulha, Coimbra, Portugal </p>
-</footer>
-
-</body>
+    <footer>
+      <div class="social-links">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+      <p>
+        &copy; 2024 <span class="brand-color">Null</span>. Todos os direitos
+        reservados.
+      </p>
+      <p>
+        nullsup.pt@null.net - Rua 1234, 3050-18, Pedrulha, Coimbra, Portugal
+      </p>
+    </footer>
+  </body>
 </html>
