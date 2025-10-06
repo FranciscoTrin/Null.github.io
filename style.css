@@ -41,7 +41,7 @@ header {
     position: relative; 
 }
 
-/* 1. Visar APENAS a imagem da logo (que está dentro de <a>) */
+/* 1. Estilo da imagem da logo (que está dentro de <a>) */
 header a img {
     height: 120px;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
@@ -49,11 +49,11 @@ header a img {
     filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.05)); 
 }
 
-/* 2. Aplicar o efeito Laranja APENAS na logo ao passar o rato */
+/* 2. Efeito de brilho laranja MELHORADO APENAS na logo ao passar o rato */
 header a img:hover {
     transform: scale(1.05);
-    /* Efeito de cor laranja (drop-shadow) ao passar o rato (hover) */
-    filter: drop-shadow(0 0 15px var(--primary-accent-color));
+    /* BRILHO MELHORADO: Aumentado para 25px para ser mais claro e visível */
+    filter: drop-shadow(0 0 25px var(--primary-accent-color));
 }
 
 /* Estilo para posicionar o Mascote Nully no canto superior direito */
@@ -206,7 +206,7 @@ p {
     margin-top: 25px;
 }
 
-/* CORREÇÃO: As imagens e vídeos agora têm apenas 100% da largura da sua célula no grid (minmax(280px, 1fr)) */
+/* CORREÇÃO: As imagens e vídeos agora usam a largura total da sua célula no grid (100%) */
 .project-images img, .project-images video {
     width: 100%;
     /* Altura automática para manter a proporção da imagem/GIF/vídeo original */
@@ -216,9 +216,9 @@ p {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* CORREÇÃO: Garantir que o GIF (se for vídeo) ou IMG tem o efeito, mas se o filtro for o problema com o GIF, pode ser necessário remover o filter daqui. Mantenho-o para testar, mas se persistir, remova o `filter` no seu código. */
 .project-images img:hover, .project-images video:hover {
     transform: scale(1.03);
+    /* Mantido filtro para brilho, mas se o GIF não animar, deve remover esta linha: */
     filter: brightness(1.1);
 }
 
