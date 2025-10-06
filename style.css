@@ -37,40 +37,33 @@ header {
     padding: 25px 0;
     text-align: center;
     animation: fadeIn 1s ease-out;
-    /* OBRIGATÓRIO: Permite posicionar o mascote em absoluto dentro do header */
     position: relative; 
 }
 
-/* 1. Estilo da imagem da logo (que está dentro de <a>) */
 header a img {
     height: 120px;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
-    /* Efeito de sombra base, mais subtil, usando a cor laranja */
     filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.05)); 
 }
 
-/* 2. Efeito de brilho laranja MELHORADO APENAS na logo ao passar o rato */
 header a img:hover {
     transform: scale(1.05);
-    /* BRILHO MELHORADO: Aumentado para 25px para ser mais claro e visível */
     filter: drop-shadow(0 0 25px var(--primary-accent-color));
 }
 
-/* Estilo para posicionar o Mascote Nully no canto superior direito */
 .mascote-nully {
     position: absolute;
-    top: 5px; /* Distância a partir do topo */
-    right: 25px; /* Distância a partir da direita */
-    height: 100px; /* Ajuste o tamanho conforme necessário */
+    top: 5px;
+    right: 25px;
+    height: 100px;
     width: auto;
-    z-index: 900; /* Para garantir que fica por cima dos outros elementos */
+    z-index: 900;
     transition: transform 0.3s ease-out, filter 0.3s ease;
 }
 
 .mascote-nully:hover {
-    /* Efeito ao passar o rato (hover) no mascote */
-    transform: scale(1.05) rotate(3deg); /* Pequeno aumento de tamanho e rotação */
-    filter: drop-shadow(0 0 10px var(--primary-accent-color)); /* Brilho laranja */
+    transform: scale(1.05) rotate(3deg);
+    filter: drop-shadow(0 0 10px var(--primary-accent-color));
 }
 
 nav {
@@ -206,10 +199,8 @@ p {
     margin-top: 25px;
 }
 
-/* CORREÇÃO: As imagens e vídeos agora usam a largura total da sua célula no grid (100%) */
 .project-images img, .project-images video {
     width: 100%;
-    /* Altura automática para manter a proporção da imagem/GIF/vídeo original */
     height: auto; 
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -218,7 +209,6 @@ p {
 
 .project-images img:hover, .project-images video:hover {
     transform: scale(1.03);
-    /* Mantido filtro para brilho, mas se o GIF não animar, deve remover esta linha: */
     filter: brightness(1.1);
 }
 
@@ -323,4 +313,109 @@ footer p {
     margin: 8px 0;
     font-size: 0.9em;
     color: var(--footer-text-color);
+}
+
+/* --- Responsividade para Dispositivos Móveis --- */
+@media (max-width: 768px) {
+    /* --- Cabeçalho e Navegação --- */
+    header a img {
+        height: 80px; /* Reduz o tamanho do logótipo */
+    }
+
+    .mascote-nully {
+        height: 70px; /* Reduz o tamanho do mascote */
+        right: 15px;
+        top: 10px;
+    }
+
+    nav {
+        flex-direction: column; /* Coloca os links da navegação em coluna */
+        align-items: center;
+        padding: 10px 0;
+        position: static; /* Remove a navegação 'sticky' em mobile para melhor experiência */
+    }
+
+    nav a {
+        padding: 12px 20px;
+        font-size: 16px; /* Aumenta um pouco para facilitar o toque */
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box; /* Garante que padding não afeta a largura total */
+    }
+    
+    nav a:hover::after {
+        width: 30%; /* Ajusta o efeito hover para o novo layout */
+    }
+
+    /* --- Conteúdo Principal --- */
+    .container {
+        margin: 30px auto; /* Reduz a margem superior */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2em; /* Reduz o tamanho do título principal */
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 1em; /* Ajusta o tamanho do parágrafo */
+        line-height: 1.7;
+    }
+
+    /* --- Página Inicial --- */
+    .hero-section {
+        flex-direction: column; /* Coloca imagem e texto em coluna */
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+    
+    .hero-section:nth-child(even) {
+        flex-direction: column; /* Garante que a ordem é sempre a mesma (imagem em cima) */
+    }
+
+    .hero-section img {
+        max-width: 100%; /* Imagem ocupa a largura total */
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em; /* Reduz o tamanho do subtítulo */
+    }
+
+    /* --- Página de Projetos --- */
+    .project-item h2 {
+        font-size: 2.2em;
+    }
+
+    /* --- Formulário --- */
+    .form-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header a img {
+        height: 70px;
+    }
+    
+    .mascote-nully {
+        display: none; /* Esconde o mascote em ecrãs muito pequenos para não sobrecarregar */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5em;
+    }
+    
+    .project-item h2 {
+        font-size: 1.8em;
+    }
+    
+    .social-icons a {
+        margin: 0 12px;
+        font-size: 1.4em;
+    }
 }
