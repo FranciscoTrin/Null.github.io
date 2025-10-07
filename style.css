@@ -32,6 +32,21 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
+/* Nova Animação para o Nully */
+@keyframes nullySlideIn {
+    /* Começa no canto superior direito, fora do ecrã */
+    from { 
+        top: -150px; /* Mais acima que a altura da imagem */
+        right: -50px; /* Um pouco para a direita */
+    }
+    /* Termina na posição onde só as orelhas e topo da cabeça aparecem */
+    to { 
+        top: -70px; /* Puxa para a posição final, mostrando as orelhas */
+        right: 15px; /* Posição final na horizontal */
+    }
+}
+
+
 /* --- Cabeçalho e Navegação --- */
 header {
     padding: 25px 0;
@@ -53,12 +68,18 @@ header a img:hover {
 
 .mascote-nully {
     position: absolute;
-    bottom: 0;
-    right: 25px;
+    /* Posição inicial ajustada para a animação */
+    /* top, right e bottom serão controlados pela animação nullySlideIn, 
+       mas vamos definir um valor de fallback/default para 'right' e remover 'bottom' */
+    right: 15px; 
+    bottom: auto; /* Removido para usar 'top' */
     height: 100px;
     width: auto;
     z-index: 900;
     transition: transform 0.3s ease-out, filter 0.3s ease;
+    
+    /* Aplicar a nova animação */
+    animation: nullySlideIn 1.5s ease-out 0.5s forwards; /* 0.5s de delay, 'forwards' para manter a posição final */
 }
 
 .mascote-nully:hover {
@@ -325,8 +346,22 @@ footer p {
     .mascote-nully {
         height: 70px; /* Reduz o tamanho do mascote */
         right: 15px;
-        bottom: 0;
+        /* Remover a linha de baixo para que o Nully continue no topo */
+        /* bottom: 0; */
     }
+    
+    /* Animação para mobile: ajuste a posição final para ser mais visível */
+    @keyframes nullySlideIn {
+        from { 
+            top: -100px; /* Mais acima que a altura da imagem (70px) */
+            right: -30px; 
+        }
+        to { 
+            top: -40px; /* Mostra as orelhas em mobile */
+            right: 10px; 
+        }
+    }
+
 
     nav {
         flex-direction: column; /* Coloca os links da navegação em coluna */
