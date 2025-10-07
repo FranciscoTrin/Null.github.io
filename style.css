@@ -32,12 +32,6 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/*
-    NÃO PRECISAMOS DE @keyframes nullySlideIn PARA ESTE EFEITO.
-    Vamos usar apenas a transição CSS com :hover.
-*/
-
-
 /* --- Cabeçalho e Navegação --- */
 header {
     padding: 25px 0;
@@ -59,30 +53,31 @@ header a img:hover {
     filter: drop-shadow(0 0 25px var(--primary-accent-color));
 }
 
+/*
+    CORREÇÃO PARA A NOVA IMAGEM: ALTURA DE 150px (exemplo)
+*/
 .mascote-nully {
     position: absolute;
-    /* 1. POSIÇÃO INICIAL (APENAS ORELHAS VISÍVEIS) */
-    top: -70px; 
+    /* AJUSTADO: Posição inicial (-120px) para esconder 120px de uma imagem de 150px, deixando 30px visíveis (orelhas) */
+    top: -120px; 
     right: 0px; 
     bottom: auto; 
-    height: 100px;
+    height: 150px; /* AJUSTADO: Nova altura da imagem da mascote */
     width: auto;
     z-index: 900;
     
-    /* 2. TRANSIÇÃO: Prepara o elemento para mover suavemente (top e transform) */
+    /* TRANSIÇÃO: Prepara o elemento para mover suavemente (top e transform) */
     transition: top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 transform 0.3s ease-out, 
                 filter 0.3s ease;
 }
 
-/* 3. EFEITO HOVER (Sai completamente para dentro) */
+/* EFEITO HOVER (Sai completamente para dentro) */
 .mascote-nully:hover {
-    /* Posição quando o rato passa por cima: puxa-o mais para baixo */
+    /* Posição final quando o rato passa por cima: totalmente visível */
     top: 0px; 
     
-    /* Posição lateral e rotação (opcional para dar mais vida) */
-    right: 0px; 
-    transform: scale(1.05) rotate(0deg); /* Mantenho apenas o scale para não distrair */
+    transform: scale(1.05) rotate(0deg); 
     filter: drop-shadow(0 0 10px var(--primary-accent-color));
 }
 
@@ -290,7 +285,7 @@ p {
     background-color: var(--primary-accent-color);
     color: var(--background-color);
     border: none;
-    border-radius: 5-px;
+    border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -343,9 +338,9 @@ footer p {
     }
 
     .mascote-nully {
-        height: 70px; /* Reduz o tamanho do mascote */
+        height: 100px; /* AJUSTADO: Novo tamanho do mascote para mobile (Ex: 100px) */
         right: 0px;
-        top: -40px; /* Posição inicial: mostra as orelhas em mobile */
+        top: -70px; /* AJUSTADO: Posição inicial: mostra 30px das orelhas (100-70) */
     }
     
     .mascote-nully:hover {
