@@ -53,7 +53,7 @@ header a img:hover {
 
 .mascote-nully {
     position: absolute;
-    top: 5px;
+    bottom: 0;
     right: 25px;
     height: 100px;
     width: auto;
@@ -325,7 +325,7 @@ footer p {
     .mascote-nully {
         height: 70px; /* Reduz o tamanho do mascote */
         right: 15px;
-        top: 10px;
+        bottom: 0;
     }
 
     nav {
