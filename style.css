@@ -32,19 +32,10 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Nova Animação para o Nully */
-@keyframes nullySlideIn {
-    /* Começa no canto superior direito, fora do ecrã */
-    from { 
-        top: -150px; /* Mais acima que a altura da imagem */
-        right: -50px; /* Um pouco para a direita */
-    }
-    /* Termina na posição onde só as orelhas e topo da cabeça aparecem */
-    to { 
-        top: -70px; /* Puxa para a posição final, mostrando as orelhas */
-        right: 0px; /* Encosta Nully à direita */
-    }
-}
+/*
+    NÃO PRECISAMOS DE @keyframes nullySlideIn PARA ESTE EFEITO.
+    Vamos usar apenas a transição CSS com :hover.
+*/
 
 
 /* --- Cabeçalho e Navegação --- */
@@ -53,7 +44,7 @@ header {
     text-align: center;
     animation: fadeIn 1s ease-out;
     position: relative; 
-    /* CORREÇÃO CHAVE: Damos ao HEADER um z-index superior ao da NAV (1000) */
+    /* Garante que o header (e Nully) fica por cima da navegação (z-index: 1000) */
     z-index: 1005; 
 }
 
@@ -70,19 +61,28 @@ header a img:hover {
 
 .mascote-nully {
     position: absolute;
-    right: 15px; 
+    /* 1. POSIÇÃO INICIAL (APENAS ORELHAS VISÍVEIS) */
+    top: -70px; 
+    right: 0px; 
     bottom: auto; 
     height: 100px;
     width: auto;
-    /* Redefinimos o z-index para um valor menor, pois o pai (header) já está por cima */
-    z-index: 900; 
-    transition: transform 0.3s ease-out, filter 0.3s ease;
+    z-index: 900;
     
-    animation: nullySlideIn 1.5s ease-out 0.5s forwards; 
+    /* 2. TRANSIÇÃO: Prepara o elemento para mover suavemente (top e transform) */
+    transition: top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                transform 0.3s ease-out, 
+                filter 0.3s ease;
 }
 
+/* 3. EFEITO HOVER (Sai completamente para dentro) */
 .mascote-nully:hover {
-    transform: scale(1.05) rotate(3deg);
+    /* Posição quando o rato passa por cima: puxa-o mais para baixo */
+    top: 0px; 
+    
+    /* Posição lateral e rotação (opcional para dar mais vida) */
+    right: 0px; 
+    transform: scale(1.05) rotate(0deg); /* Mantenho apenas o scale para não distrair */
     filter: drop-shadow(0 0 10px var(--primary-accent-color));
 }
 
@@ -290,7 +290,7 @@ p {
     background-color: var(--primary-accent-color);
     color: var(--background-color);
     border: none;
-    border-radius: 5px;
+    border-radius: 5-px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -344,21 +344,13 @@ footer p {
 
     .mascote-nully {
         height: 70px; /* Reduz o tamanho do mascote */
-        right: 15px;
+        right: 0px;
+        top: -40px; /* Posição inicial: mostra as orelhas em mobile */
     }
     
-    /* Animação para mobile: ajuste a posição final para ser mais visível */
-    @keyframes nullySlideIn {
-        from { 
-            top: -100px; /* Mais acima que a altura da imagem (70px) */
-            right: -30px; 
-        }
-        to { 
-            top: -40px; /* Mostra as orelhas em mobile */
-            right: 0px; /* Encosta Nully à direita */
-        }
+    .mascote-nully:hover {
+        top: 0px; /* Posição final: sai completamente para dentro */
     }
-
 
     nav {
         flex-direction: column; /* Coloca os links da navegação em coluna */
