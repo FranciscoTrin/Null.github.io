@@ -42,7 +42,7 @@ body {
     /* Termina na posição onde só as orelhas e topo da cabeça aparecem */
     to { 
         top: -70px; /* Puxa para a posição final, mostrando as orelhas */
-        right: 0px; /* Ajuste: Encosta Nully à direita (como a seta indica) */
+        right: 0px; /* Encosta Nully à direita */
     }
 }
 
@@ -53,6 +53,8 @@ header {
     text-align: center;
     animation: fadeIn 1s ease-out;
     position: relative; 
+    /* CORREÇÃO CHAVE: Damos ao HEADER um z-index superior ao da NAV (1000) */
+    z-index: 1005; 
 }
 
 header a img {
@@ -72,8 +74,8 @@ header a img:hover {
     bottom: auto; 
     height: 100px;
     width: auto;
-    /* CORREÇÃO: Aumenta o Z-index para o Nully ficar SEMPRE por cima da navegação (z-index: 1000) */
-    z-index: 1001; 
+    /* Redefinimos o z-index para um valor menor, pois o pai (header) já está por cima */
+    z-index: 900; 
     transition: transform 0.3s ease-out, filter 0.3s ease;
     
     animation: nullySlideIn 1.5s ease-out 0.5s forwards; 
@@ -343,7 +345,6 @@ footer p {
     .mascote-nully {
         height: 70px; /* Reduz o tamanho do mascote */
         right: 15px;
-        /* z-index: 1001; já definido acima, mas pode ser repetido aqui se precisar de um valor diferente em mobile */
     }
     
     /* Animação para mobile: ajuste a posição final para ser mais visível */
@@ -354,7 +355,7 @@ footer p {
         }
         to { 
             top: -40px; /* Mostra as orelhas em mobile */
-            right: 0px; /* Ajuste: Encosta Nully à direita */
+            right: 0px; /* Encosta Nully à direita */
         }
     }
 
